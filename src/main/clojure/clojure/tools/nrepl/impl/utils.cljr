@@ -70,7 +70,7 @@
   [reader]
   (if-let [c (and (skip-whitespace reader)
                      (rt/peek-char reader))]
-	(ctr/read reader)
+	(ctr/read {:read-cond :allow} reader)
 	eof))
 
 ;; this is taken from sci.impl.interpreter/eval-string*
